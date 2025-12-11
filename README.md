@@ -1,4 +1,5 @@
-# Expense Tracker �
+# Expense Tracker 📝
+
 A simple expense tracker application to manage your finances. This project is an exercise from the roadmap.sh project: https://roadmap.sh/projects/expense-tracker 📚
 
 **What it does**
@@ -9,7 +10,7 @@ A simple expense tracker application to manage your finances. This project is an
 
 - Go 1.25.1 or newer installed
 
-**Installation** �
+## Installation 📦
 
 There are a few easy ways to get and run this project.
 
