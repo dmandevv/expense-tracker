@@ -1,4 +1,4 @@
-# expense-tracker
+# Expense Tracker �
 A simple expense tracker application to manage your finances. This project is an exercise from the roadmap.sh project: https://roadmap.sh/projects/expense-tracker 📚
 
 **What it does**
@@ -9,7 +9,7 @@ A simple expense tracker application to manage your finances. This project is an
 
 - Go 1.25.1 or newer installed
 
-**Install**
+**Installation** �
 
 There are a few easy ways to get and run this project.
 
@@ -35,6 +35,18 @@ After building you can run the generated `expense-tracker` binary.
 ```shell
 go run .
 ```
+
+## Setup ⚙️
+
+Expense tracker saves data to a YAML file. By default the app uses `./expenses.txt` in the current working directory. You can override the path using the `SAVE_DATA_PATH` environment variable.
+
+Create a `.env` file in the project root (or set the variable in your shell) with the following content:
+
+```env
+SAVE_DATA_PATH="DIRECTORY_PATH/FILE_NAME.txt"
+```
+
+- The program will create the file automatically when you save tasks.
 
 ## Usage ✅
 
