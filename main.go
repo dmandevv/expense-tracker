@@ -3,7 +3,7 @@ package main
 func main() {
 	cfg := Config{
 		NextID:   0,
-		Expenses: []Expense{},
+		Expenses: []*Expense{},
 	}
 
 	StartREPL(&cfg)

@@ -50,7 +50,7 @@ func getCommands() map[string]command {
 		"add": {
 			name:        "add",
 			description: "Add a new expense",
-			usage:       "add --name <\"name\"> --amount <0.00>",
+			usage:       "add --description <\"description\"> --amount <0.00>",
 			callback:    AddExpense,
 		},
 		"list": {
@@ -64,6 +64,18 @@ func getCommands() map[string]command {
 			description: "List total amount of expenses",
 			usage:       "summary [--month <number>]",
 			callback:    Summary,
+		},
+		"update": {
+			name:        "update",
+			description: "Change an expense's info based on ID",
+			usage:       "update --id <id> --description <\"description\"> --amount <0.00>",
+			callback:    UpdateExpense,
+		},
+		"delete": {
+			name:        "delete",
+			description: "Delete an expense by its ID",
+			usage:       "delete --id <id>",
+			callback:    DeleteExpense,
 		},
 	}
 }
