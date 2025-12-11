@@ -11,7 +11,6 @@ func main() {
 	err := godotenv.Load()
 	var saveDataPath string
 	if err != nil {
-		fmt.Println("Error loading .env file")
 		fmt.Println("Defaulting to saving in current directory")
 		saveDataPath = "./expenses.txt"
 	} else {
