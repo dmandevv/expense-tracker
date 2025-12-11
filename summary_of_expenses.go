@@ -19,7 +19,7 @@ func Summary(cfg *Config, args ...string) error {
 				total += e.Amount
 			}
 		}
-		fmt.Printf("Total expenses for %v: $%.2f\n", month.String(), total)
+		fmt.Printf("Total expenses for %v, %v: $%.2f\n", month.String(), time.Now().Year(), total)
 		return nil
 	}
 	for _, e := range cfg.Expenses {

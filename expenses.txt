@@ -1,6 +1,10 @@
-next_id: 2
+next_id: 3
 expenses:
     - id: 0
       description: games
       date: 2025-12-11T15:50:14.371207501Z
       amount: 200000
+    - id: 2
+      description: groceries
+      date: 2025-12-11T15:57:31.679568566Z
+      amount: 10

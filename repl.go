@@ -76,6 +76,11 @@ func getCommands() map[string]command {
 			usage:       "help",
 			callback:    help,
 		},
+		"exit": {
+			description: "Exit program",
+			usage:       "exit",
+			callback:    exit,
+		},
 	}
 }
 
@@ -88,5 +93,10 @@ func help(cfg *Config, args ...string) error {
 	}
 	fmt.Println()
 	fmt.Println()
+	return nil
+}
+
+func exit(cfg *Config, args ...string) error {
+	os.Exit(0)
 	return nil
 }
