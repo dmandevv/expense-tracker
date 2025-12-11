@@ -21,6 +21,9 @@ func DeleteExpense(cfg *Config, args ...string) error {
 		if e.ID == idNumber {
 			cfg.Expenses = slices.Delete(cfg.Expenses, i, i+1)
 			fmt.Printf("Expense ID: %v deleted\n", idNumber)
+
+			saveData(cfg)
+
 			return nil
 		}
 	}

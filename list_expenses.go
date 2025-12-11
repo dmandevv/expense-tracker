@@ -7,7 +7,7 @@ import (
 )
 
 func ListExpenses(cfg *Config, args ...string) error {
-	tabWriter := tabwriter.NewWriter(os.Stdout, 0, 0, 3, ' ', 0)
+	tabWriter := tabwriter.NewWriter(os.Stdout, 0, 0, 5, ' ', 0)
 	defer tabWriter.Flush()
 	fmt.Fprintln(tabWriter, "ID\tDate\tDescription\tAmount")
 	for _, e := range cfg.Expenses {

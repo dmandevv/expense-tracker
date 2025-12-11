@@ -39,5 +39,7 @@ func UpdateExpense(cfg *Config, args ...string) error {
 	expense.Amount = newAmountNumber
 	fmt.Printf("Expense ID: %v updated\n", idNumber)
 
+	saveData(cfg)
+
 	return nil
 }

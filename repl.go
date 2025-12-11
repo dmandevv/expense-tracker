@@ -8,7 +8,6 @@ import (
 )
 
 type command struct {
-	name        string
 	description string
 	usage       string
 	callback    func(*Config, ...string) error
@@ -48,34 +47,46 @@ func cleanInput(input string) []string {
 func getCommands() map[string]command {
 	return map[string]command{
 		"add": {
-			name:        "add",
 			description: "Add a new expense",
 			usage:       "add --description <\"description\"> --amount <0.00>",
 			callback:    AddExpense,
 		},
 		"list": {
-			name:        "list",
 			description: "List all expenses",
 			usage:       "list",
 			callback:    ListExpenses,
 		},
 		"summary": {
-			name:        "summary",
 			description: "List total amount of expenses",
 			usage:       "summary [--month <number>]",
 			callback:    Summary,
 		},
 		"update": {
-			name:        "update",
 			description: "Change an expense's info based on ID",
 			usage:       "update --id <id> --description <\"description\"> --amount <0.00>",
 			callback:    UpdateExpense,
 		},
 		"delete": {
-			name:        "delete",
 			description: "Delete an expense by its ID",
 			usage:       "delete --id <id>",
 			callback:    DeleteExpense,
 		},
+		"help": {
+			description: "List available commands",
+			usage:       "help",
+			callback:    help,
+		},
 	}
+}
+
+func help(cfg *Config, args ...string) error {
+	mapOfCommands := getCommands()
+	fmt.Print("--List of commands--")
+	for name, command := range mapOfCommands {
+		fmt.Printf("\n\n%v: %v", name, command.description)
+		fmt.Printf("\nUsage: %v", command.usage)
+	}
+	fmt.Println()
+	fmt.Println()
+	return nil
 }

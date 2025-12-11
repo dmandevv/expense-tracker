@@ -14,7 +14,7 @@ func AddExpense(cfg *Config, args ...string) error {
 	description := args[1]
 	amount := args[3]
 	amountFloat, err := strconv.ParseFloat(amount, 64)
-	if err != nil {
+	if err != nil || amountFloat < 0 {
 		return fmt.Errorf("invalid amount format: %v", amount)
 	}
 
@@ -28,6 +28,8 @@ func AddExpense(cfg *Config, args ...string) error {
 	cfg.Expenses = append(cfg.Expenses, &newExpense)
 
 	fmt.Printf("Added expense (ID: %v)\n", newExpense.ID)
+
+	saveData(cfg)
 
 	return nil
 }
